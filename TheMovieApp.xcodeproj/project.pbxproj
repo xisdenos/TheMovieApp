@@ -13,6 +13,9 @@
 		06BDA64A28C286EC00C6FCA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06BDA64928C286EC00C6FCA9 /* Assets.xcassets */; };
 		06BDA64D28C286EC00C6FCA9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06BDA64B28C286EC00C6FCA9 /* LaunchScreen.storyboard */; };
 		06C8EF0D28C2B1C1007B2A54 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C8EF0C28C2B1C1007B2A54 /* Coordinator.swift */; };
+		06C8EF1028C2B4BA007B2A54 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C8EF0F28C2B4BA007B2A54 /* RequestManager.swift */; };
+		06C8EF1228C2B7DE007B2A54 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C8EF1128C2B7DE007B2A54 /* NetworkRequest.swift */; };
+		06C8EF1428C2B9A9007B2A54 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C8EF1328C2B9A9007B2A54 /* NetworkError.swift */; };
 		58BEAD89C54D0AAC8BD3FE19 /* Pods_TheMovieApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17878532C4F97D0A8095354E /* Pods_TheMovieApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +28,9 @@
 		06BDA64C28C286EC00C6FCA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		06BDA64E28C286EC00C6FCA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		06C8EF0C28C2B1C1007B2A54 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		06C8EF0F28C2B4BA007B2A54 /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
+		06C8EF1128C2B7DE007B2A54 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		06C8EF1328C2B9A9007B2A54 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		17878532C4F97D0A8095354E /* Pods_TheMovieApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheMovieApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		79FCF68C451344DC577307DC /* Pods-TheMovieApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheMovieApp.debug.xcconfig"; path = "Target Support Files/Pods-TheMovieApp/Pods-TheMovieApp.debug.xcconfig"; sourceTree = "<group>"; };
 		877A59EBB152B84296255F7C /* Pods-TheMovieApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheMovieApp.release.xcconfig"; path = "Target Support Files/Pods-TheMovieApp/Pods-TheMovieApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -94,6 +100,7 @@
 		06C8EF0A28C2B195007B2A54 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				06C8EF0E28C2B4A4007B2A54 /* Network */,
 				06C8EF0B28C2B1B1007B2A54 /* Protocols */,
 			);
 			path = Foundation;
@@ -105,6 +112,16 @@
 				06C8EF0C28C2B1C1007B2A54 /* Coordinator.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		06C8EF0E28C2B4A4007B2A54 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				06C8EF0F28C2B4BA007B2A54 /* RequestManager.swift */,
+				06C8EF1128C2B7DE007B2A54 /* NetworkRequest.swift */,
+				06C8EF1328C2B9A9007B2A54 /* NetworkError.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		58973F8D74C0EBFAAC35CB9C /* Pods */ = {
@@ -220,9 +237,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06C8EF1028C2B4BA007B2A54 /* RequestManager.swift in Sources */,
+				06C8EF1428C2B9A9007B2A54 /* NetworkError.swift in Sources */,
 				06C8EF0D28C2B1C1007B2A54 /* Coordinator.swift in Sources */,
 				06BDA64528C286EB00C6FCA9 /* ViewController.swift in Sources */,
 				06BDA64128C286EB00C6FCA9 /* AppDelegate.swift in Sources */,
+				06C8EF1228C2B7DE007B2A54 /* NetworkRequest.swift in Sources */,
 				06BDA64328C286EB00C6FCA9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
