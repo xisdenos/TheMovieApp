@@ -6,5 +6,6 @@ target 'TheMovieApp' do
   use_frameworks!
 
   # Pods for TheMovieApp
+    pod 'SwiftLint'
 
 end
