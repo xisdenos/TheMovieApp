@@ -6,10 +6,12 @@
 //
 
 import Foundation
-
+//MARK: - Protocol
 protocol NetworkAdapterProtocol {
     func parseRequest<T: Decodable>(networkRequest: NetworkRequest, completion: @escaping (Result<T, Error>) -> Void)
 }
+
+//MARK: - Adapter class
 
 class NetwrokAdapter: NetworkAdapterProtocol {
     var networkManager: NetworkManager

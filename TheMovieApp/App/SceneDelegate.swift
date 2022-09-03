@@ -21,10 +21,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         window?.makeKeyAndVisible()
         
-        let vc: ViewController = ViewController()
-        window?.rootViewController = vc
+        let navVC: UINavigationController = UINavigationController()
+        window?.rootViewController = navVC
         
-        
+        let coordinator = MovieTabBarCoordinator(navigationController: navVC)
+        coordinator.start()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
