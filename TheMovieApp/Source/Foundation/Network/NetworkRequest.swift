@@ -10,7 +10,6 @@ import Foundation
 struct NetworkRequest {
     var endpointURL: String
     var method: HTTPMethod
-    var headers: [String: String]
 }
 
 enum HTTPMethod: String {
