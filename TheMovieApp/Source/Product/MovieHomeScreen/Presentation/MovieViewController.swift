@@ -9,6 +9,8 @@ import Foundation
 
 class MovieHomeViewController: ViewController {
     
+    var viewModel: MovieHomeViewModel = MovieHomeViewModel()
+    
     override func loadView() {
         super.loadView()
         view.backgroundColor = .red
@@ -16,5 +18,14 @@ class MovieHomeViewController: ViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.delegate(delegate: self)
+    }
+}
+
+extension MovieHomeViewController: sucessDelegate {
+    func success() {
+        DispatchQueue.main.async {
+            print(self.viewModel.movieList.results)
+        }
     }
 }

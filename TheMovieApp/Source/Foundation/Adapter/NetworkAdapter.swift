@@ -11,7 +11,7 @@ protocol NetworkAdapterProtocol {
     func parseRequest<T: Decodable>(networkRequest: NetworkRequest, completion: @escaping (Result<T, Error>) -> Void)
 }
 
-//MARK: - Adapter class
+//MARK: - Adapter pattern
 
 class NetwrokAdapter: NetworkAdapterProtocol {
     var networkManager: NetworkManager
