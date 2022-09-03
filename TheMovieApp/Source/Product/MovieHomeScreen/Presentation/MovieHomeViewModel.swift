@@ -26,8 +26,9 @@ class MovieHomeViewModel {
     
     //MARK: - Builder pattern
     
-    init(movieList: MovieDetailModel) {
-        self.movieList = movieList
+    init() {
+        self.movieList = MovieDetailModel(results: [])
+        fetchTrendData()
     }
     
     public func movieCount() -> Int {
@@ -36,7 +37,7 @@ class MovieHomeViewModel {
     
     public func getSingleMovie(index: Int) -> Results {
         return movieList.results[index]
-    }    
+    }
 }
 
 //MARK: - API Call
