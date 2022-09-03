@@ -13,9 +13,10 @@ class MovieViewTableViewCell: UITableViewCell {
     
     lazy var topicLabel: UILabel = {
         let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "#Topic"
         label.font = UIFont.boldSystemFont(ofSize: 12)
-        label.textColor = .white
+        label.textColor = .black
         return label
     }()
     
@@ -38,6 +39,13 @@ class MovieViewTableViewCell: UITableViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    //MARK: - CollectionView Delegate
+    
+    func setUpTableViewDelegate(delegate: UICollectionViewDelegate, dataSorce: UICollectionViewDataSource) {
+        self.trendMoviesCollectionView.delegate = delegate
+        self.trendMoviesCollectionView.dataSource = dataSorce
     }
     //MARK: - Constraints
     
