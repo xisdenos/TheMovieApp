@@ -6,26 +6,34 @@
 //
 
 import Foundation
+import UIKit
 
-class MovieHomeViewController: ViewController {
+class MovieHomeViewController: UIViewController {
     
     var viewModel: MovieHomeViewModel = MovieHomeViewModel()
+    var homeView: MovieHomeView = MovieHomeView()
     
     override func loadView() {
         super.loadView()
-        view.backgroundColor = .red
+        self.view = homeView
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.delegate(delegate: self)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
 }
+
+//MARK: - Delegate extension
 
 extension MovieHomeViewController: sucessDelegate {
     func success() {
         DispatchQueue.main.async {
-            print(self.viewModel.movieList.results)
+            print("Chamou")
         }
     }
 }

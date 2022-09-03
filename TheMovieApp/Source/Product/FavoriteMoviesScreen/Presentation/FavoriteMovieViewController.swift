@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import UIKit
 
-class FavoriteMoviewViewcontroller: ViewController {
+class FavoriteMoviewViewcontroller: UIViewController {
     
     override func loadView() {
         super.loadView()
