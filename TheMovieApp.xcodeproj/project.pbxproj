@@ -226,8 +226,8 @@
 			children = (
 				064EC33E28C3F50D002BD2AF /* Cell */,
 				06C8EF2028C2D2C6007B2A54 /* MovieViewController.swift */,
-				06C8EF3428C322E6007B2A54 /* MovieHomeViewModel.swift */,
 				06C8EF3628C3DCC8007B2A54 /* MovieHomeView.swift */,
+				06C8EF3428C322E6007B2A54 /* MovieHomeViewModel.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";

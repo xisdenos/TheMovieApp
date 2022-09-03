@@ -21,7 +21,7 @@ class MovieViewTableViewCell: UITableViewCell {
     
     lazy var trendMoviesCollectionView: UICollectionView = {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout.init()
-            layout.scrollDirection = .vertical
+            layout.scrollDirection = .horizontal
     
         let cv = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         cv.translatesAutoresizingMaskIntoConstraints = false

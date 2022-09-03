@@ -29,6 +29,7 @@ class MovieHomeView: UIView {
     lazy var MoviesList: UITableView = {
         let tView = UITableView()
         tView.translatesAutoresizingMaskIntoConstraints = false
+        tView.register(MovieViewTableViewCell.self, forCellReuseIdentifier: MovieViewTableViewCell.identifier)
         tView.backgroundColor = .purple
         return tView
     }()
