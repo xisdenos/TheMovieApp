@@ -7,10 +7,12 @@
 
 import Foundation
 
+//MARK: - Protocol
 protocol NetworkManagerProtocol {
     func getData(with request: NetworkRequest, completion: @escaping (Result<Data, Error>) -> Void)
 }
 
+//MARK: - Network mannager class
 final class NetworkManager: NetworkManagerProtocol {
     
     func getData(with request: NetworkRequest, completion: @escaping (Result<Data, Error>) -> Void) {
