@@ -13,18 +13,22 @@ class MovieViewColectionViewCell: UICollectionViewCell {
     
     lazy var movieTitle: UILabel = {
         let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Movie Title"
-        label.textColor = .black
+        label.textColor = .green
         label.font = UIFont.systemFont(ofSize: 16)
         return label
     }()
     
     //MARK: - Initializer
     
-    static let identifier = "CollectionViewCell"
+    static let identifier = "MovieViewColectionViewCell"
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        addSubview(self.movieTitle)
+        backgroundColor = .red
+        configConstraints()
     }
     
     required init?(coder: NSCoder) {
@@ -36,7 +40,7 @@ class MovieViewColectionViewCell: UICollectionViewCell {
     private func configConstraints() {
         NSLayoutConstraint.activate([
             movieTitle.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            movieTitle.centerYAnchor.constraint(equalTo: self.centerYAnchor)
+            movieTitle.centerYAnchor.constraint(equalTo: self.centerYAnchor),
         ])
     }
 }

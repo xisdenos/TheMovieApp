@@ -80,3 +80,5 @@ class MovieHomeView: UIView {
         ])
     }
 }
+    
+

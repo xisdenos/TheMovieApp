@@ -14,9 +14,9 @@ class MovieViewTableViewCell: UITableViewCell {
     lazy var topicLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "#Topic"
-        label.font = UIFont.boldSystemFont(ofSize: 12)
-        label.textColor = .black
+        label.text = "Topic"
+        label.font = UIFont.boldSystemFont(ofSize: 18)
+        label.textColor = .green
         return label
     }()
     
@@ -26,7 +26,8 @@ class MovieViewTableViewCell: UITableViewCell {
     
         let cv = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         cv.translatesAutoresizingMaskIntoConstraints = false
-        cv.backgroundColor = .purple
+        cv.register(MovieViewColectionViewCell.self, forCellWithReuseIdentifier: MovieViewColectionViewCell.identifier)
+        cv.backgroundColor = .red
         return cv
     }()
     //MARK: - Initializer
@@ -35,6 +36,9 @@ class MovieViewTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        contentView.addSubview(self.topicLabel)
+        contentView.addSubview(self.trendMoviesCollectionView)
+        configConstraints()
     }
     
     required init?(coder: NSCoder) {
@@ -43,9 +47,9 @@ class MovieViewTableViewCell: UITableViewCell {
     
     //MARK: - CollectionView Delegate
     
-    func setUpTableViewDelegate(delegate: UICollectionViewDelegate, dataSorce: UICollectionViewDataSource) {
+    func setUpCollectionViewDelegate(delegate: UICollectionViewDelegate, dataSource: UICollectionViewDataSource) {
         self.trendMoviesCollectionView.delegate = delegate
-        self.trendMoviesCollectionView.dataSource = dataSorce
+        self.trendMoviesCollectionView.dataSource = dataSource
     }
     //MARK: - Constraints
     
@@ -58,7 +62,7 @@ class MovieViewTableViewCell: UITableViewCell {
             trendMoviesCollectionView.topAnchor.constraint(equalTo: self.topicLabel.bottomAnchor, constant: 3),
             trendMoviesCollectionView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 5),
             trendMoviesCollectionView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -5),
-            trendMoviesCollectionView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -1)
+            trendMoviesCollectionView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -1),
         ])
     }
 
