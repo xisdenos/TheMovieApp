@@ -13,7 +13,7 @@ final class MovieTabBar: UITabBarController {
     override func setViewControllers(_ viewControllers: [UIViewController]?, animated: Bool) {
         super.setViewControllers(viewControllers, animated: animated)
         
-        tabBar.tintColor = .red
+        tabBar.tintColor = .blue
         tabBar.isTranslucent = false
         UITabBar.appearance().barTintColor = .green
     }
