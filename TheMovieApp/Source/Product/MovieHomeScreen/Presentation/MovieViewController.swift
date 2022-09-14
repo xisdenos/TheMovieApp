@@ -12,8 +12,6 @@ class MovieHomeViewController: UIViewController {
     
     var viewModel: MovieHomeViewModel = MovieHomeViewModel()
     var homeView: MovieHomeView = MovieHomeView()
-    var tableViewConfigureDelegate: MovieViewTableViewCell = MovieViewTableViewCell()
-    
     
     override func loadView() {
         super.loadView()
@@ -24,7 +22,6 @@ class MovieHomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.delegate(delegate: self)
-        tableViewConfigureDelegate.setUpCollectionViewDelegate(delegate: self, dataSource: self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,8 +34,8 @@ class MovieHomeViewController: UIViewController {
 extension MovieHomeViewController: sucessDelegate {
     func success() {
         DispatchQueue.main.async {
-            print("Chamou")
-        }
+            print(self.viewModel.movieList.results)
+        } 
     }
 }
 
@@ -62,16 +59,5 @@ extension MovieHomeViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 //MARK: - CollectionView configuration
-extension MovieHomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: MovieViewColectionViewCell? = collectionView.dequeueReusableCell(withReuseIdentifier: MovieViewColectionViewCell.identifier, for: indexPath)
-        as? MovieViewColectionViewCell
-        return cell ?? UICollectionViewCell()
-    }
-}
+
 
