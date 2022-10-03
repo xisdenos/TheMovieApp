@@ -9,6 +9,7 @@ import UIKit
 
 class MovieViewTableViewCell: UITableViewCell {
     
+    
     //MARK: - Components
     
     lazy var topicLabel: UILabel = {
@@ -27,7 +28,7 @@ class MovieViewTableViewCell: UITableViewCell {
         let cv = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         cv.translatesAutoresizingMaskIntoConstraints = false
         cv.register(MovieViewColectionViewCell.self, forCellWithReuseIdentifier: MovieViewColectionViewCell.identifier)
-        cv.backgroundColor = .red
+        cv.backgroundColor = .brown
         return cv
     }()
     //MARK: - Initializer
@@ -38,6 +39,7 @@ class MovieViewTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.addSubview(self.topicLabel)
         contentView.addSubview(self.trendMoviesCollectionView)
+        setUpCollectionViewDelegate(delegate: self, dataSource: self)
         configConstraints()
     }
     
@@ -66,4 +68,17 @@ class MovieViewTableViewCell: UITableViewCell {
         ])
     }
 
+}
+
+extension MovieViewTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell: MovieViewColectionViewCell? = collectionView.dequeueReusableCell(withReuseIdentifier: MovieViewColectionViewCell.identifier, for: indexPath)
+        as? MovieViewColectionViewCell
+        return cell ?? UICollectionViewCell()
+    }
 }
